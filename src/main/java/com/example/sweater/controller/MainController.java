@@ -79,8 +79,10 @@ public class MainController {
             model.mergeAttributes(errors);
             return greeting(user, model, "");
         }else {
-            String newName = fileWriter.writeToAmazonS3(file, null);
-            message.setFilename(newName);
+            if(!file.isEmpty()){
+                String newName = fileWriter.writeToAmazonS3(file, null);
+                message.setFilename(newName);
+            }
             repo.save(message);
         }
         return "redirect:/";
