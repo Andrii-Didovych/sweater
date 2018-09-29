@@ -1,0 +1,16 @@
+.login-registration-style {
+    border: 1px solid #acb1b4;
+    background-color: white;
+    padding: 50px 150px;
+    max-width: 850px;
+    margin: 10px auto;
+}
+.col-sm-4{
+    text-align: right;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #e6ecf0;
+}
