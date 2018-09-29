@@ -50,12 +50,12 @@ public class UserService implements UserDetailsService {
             return false;
         }
         if (userRepo.count()==0 && !dllAuto.equals("validate")) {
-            System.out.println("set role");
             user.setRoles(Collections.singleton(Role.ADMIN));
-        }
+        }else user.setRoles(Collections.singleton(Role.USER));
         user.setActive(true);
         user.setPhoto(defaultPhoto);
-        user.setRoles(Collections.singleton(Role.USER));
+        System.out.println(user.getRoles());
+        System.out.println("after");
         user.setActivationCode(UUID.randomUUID().toString());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(false);
