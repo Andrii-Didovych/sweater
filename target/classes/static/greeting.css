@@ -1,0 +1,53 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+.row{
+    margin: 0px;
+}
+
+.greeting-container {
+    min-height: 100%;
+
+}
+.left {
+    min-height: 100%;
+    background-color: #1da1f2;
+    color: white;
+}
+ul{
+    margin-top: 30%;
+}
+ul> li {
+    font-size: 22px;
+    margin: 30px;
+    color: white;
+}
+
+.right-inside{
+    width: 50%;
+    margin: 25% auto;
+    padding: 20px;
+}
+
+.my-buttons {
+    background-color: #1da1f2;
+    padding: 5px;
+    width: 100%;
+    margin: 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+.justify-content-center a{
+    text-decoration: none;
+}
+
+.white a{
+    color: #1da1f2;
+}
+.white >.my-buttons {
+    background-color: white;
+    border: 2px solid #1da1f2;
+}
