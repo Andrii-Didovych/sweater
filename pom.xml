@@ -8,10 +8,6 @@
     <artifactId>sweater</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-    </properties>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -87,6 +83,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
     </properties>
 
 
