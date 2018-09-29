@@ -5,9 +5,8 @@
 <@c.page true>
      <#if Session?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
     <div class="mb-0 alert alert-danger" role="alert">
-        ${Session.SPRING_SECURITY_LAST_EXCEPTION.message}
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <a href="/problem">Info</a>
+        There are some problems <a href="/problem">Info</a>
     </div>
      </#if>
 
