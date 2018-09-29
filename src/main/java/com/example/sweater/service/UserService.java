@@ -37,7 +37,7 @@ public class UserService implements UserDetailsService {
          User user = userRepo.findByUsername(username);
         System.out.println(user.getActivationCode()  +  " - activation code");
         System.out.println(user.getId() +  " - id");
-        if (user == null || (user.getActivationCode()!=null&&user.getId()!=1)) {
+        if (user == null) {
             throw new UsernameNotFoundException("User not found!");
         }
         return user;

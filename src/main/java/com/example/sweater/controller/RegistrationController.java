@@ -86,11 +86,6 @@ public class RegistrationController {
             model.addAttribute("message", "User doesn't exist!");
             return "problem";
         }
-        if (user.getActivationCode()!=null) {
-            model.addAttribute("username", username);
-            model.addAttribute("message", "You have to confirm your email!");
-            return "problem";
-        }
         if (!user.isActive()) return  "redirect:/captcha/"+ user.getId();
         else {
             model.addAttribute("username", username);
