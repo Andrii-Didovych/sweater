@@ -78,12 +78,17 @@ public class ProfileController {
     @PostMapping("/photo")
     public String updatePhoto(@AuthenticationPrincipal User user,
                                     @RequestParam("photoOfUser") MultipartFile file,
-                                    Model model) throws IOException, S3ServiceException {
+                                    Model model){
         if (file.isEmpty()) {
             model.addAttribute("fileError", "File was not selected!");
             return getProfile(model, user);
         }
-        String newName = fileWriter.writeToAmazonS3(file, userService.findUser(user.getUsername()).getPhoto());
+        String newName = null;
+        try {
+            newName = fileWriter.writeToAmazonS3(file, userService.findUser(user.getUsername()).getPhoto());
+        } catch (S3ServiceException e) {
+            e.printStackTrace();
+        }
         user.setPhoto(newName);
         userService.saveUser(user);
         return "redirect:/profile";

@@ -40,7 +40,8 @@ public class FileWriter {
     public String writeToAmazonS3(MultipartFile file, String photo) throws S3ServiceException {
         AWSCredentials credentials = new AWSCredentials(accessKey,secretAccessKey);
         S3Service s3 = new RestS3Service(credentials);
-        S3Bucket imageBucket = s3.getBucket(bucketName);
+        S3Bucket imageBucket = s3.getOrCreateBucket(bucketName);
+        System.out.println("after");
         File newName = renameFile(file);
         S3Object imageObject = new S3Object(newName.getName());
         try {
