@@ -54,10 +54,10 @@
         </dependency>
 
         <!--migration of database-->
-        <!--<dependency>-->
-            <!--<groupId>org.flywaydb</groupId>-->
-            <!--<artifactId>flyway-core</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
 
         <!--session storage in database-->
         <dependency>
@@ -95,11 +95,11 @@
             </plugin>
 
             <!--for migration database-->
-            <!--<plugin>-->
-                <!--<groupId>org.flywaydb</groupId>-->
-                <!--<artifactId>flyway-maven-plugin</artifactId>-->
-                <!--<version>5.1.4</version>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>5.1.4</version>
+            </plugin>
         </plugins>
     </build>
 
