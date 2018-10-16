@@ -1,6 +1,7 @@
 package com.example.sweater.controller;
 
 import com.example.sweater.domain.User;
+import org.springframework.data.domain.Pageable;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
@@ -34,5 +35,14 @@ public class ControllerUtils {
             }
         }
         return users;
+    }
+
+    static String buildParams(Pageable pageable) {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append("?page=");
+        buffer.append(String.valueOf(pageable.getPageNumber()));
+        buffer.append("&size=");
+        buffer.append(String.valueOf(pageable.getPageSize()));
+        return buffer.toString();
     }
 }

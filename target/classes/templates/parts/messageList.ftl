@@ -1,6 +1,7 @@
 <#include "security.ftl">
+<#import "pager.ftl" as p>
 
-    <#list messages as message>
+    <#list page.content as message>
         <div class="card mb-2 px-1 pb-1">
             <div class="m-2 row m-0 text-muted pr-0">
                 <div class="col-sm-3 row p-0">
@@ -28,3 +29,6 @@
             <h6>Here is not any messages yet</h6>
         </div>
     </#list>
+
+    <@p.pager url page/>
+

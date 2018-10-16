@@ -7,7 +7,10 @@ import com.example.sweater.service.FileWriter;
 import com.example.sweater.service.UserService;
 import org.jets3t.service.S3ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 
@@ -38,20 +40,22 @@ public class MainController {
     @GetMapping("/")
     public String greeting(@AuthenticationPrincipal User user,
                             Model model,
+                           @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable,
                            @RequestParam(required = false, defaultValue = "") String filter) {
         if(user!=null) {
-            Iterable<Message> messages;
+            Page<Message> page;
             if (filter!=null && !filter.isEmpty()){
-                messages = repo.findByTag(filter);
-                ((List<Message>) messages).sort(null);
+                page = repo.findByTag(filter, pageable);
             }else {
-                messages = repo.findAll();
-                 ((List<Message>) messages).sort(null);
+                page = repo.findAll(pageable);
+
             }
             User user1 = userService.findUser(user.getUsername());
 
+
             model.addAttribute("authenticatedUser", user);
-            model.addAttribute("messages", messages);
+            model.addAttribute("page", page);
+            model.addAttribute("url", "/");
             model.addAttribute("filter", filter);
             model.addAttribute("photo", user1.getPhoto());
             model.addAttribute("subscriptionsCount", user1.getSubscription().size());
@@ -71,13 +75,14 @@ public class MainController {
                       @Valid Message message,
                       BindingResult bindingResult,
                       Model model,
+                      @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable,
                       @RequestParam("file") MultipartFile file) throws IOException, S3ServiceException {
         message.setAuthor(user);
 
         if (bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errors);
-            return greeting(user, model, "");
+            return greeting(user, model, pageable, "");
         }else {
             if(!file.isEmpty()){
                 String newName = fileWriter.writeToAmazonS3(file, null);
@@ -85,7 +90,7 @@ public class MainController {
             }
             repo.save(message);
         }
-        return "redirect:/";
-
+        return "redirect:/"+ControllerUtils.buildParams(pageable);
     }
+
 }

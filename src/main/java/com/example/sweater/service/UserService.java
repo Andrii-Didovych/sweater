@@ -29,14 +29,13 @@ public class UserService implements UserDetailsService {
     @Value("${default.photo.of.user}")
     private String defaultPhoto;
 
+
     @Value("spring.jpa.hibernate.ddl-auto")
     private String dllAuto;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-         User user = userRepo.findByUsername(username);
-        System.out.println(user.getActivationCode()  +  " - activation code");
-        System.out.println(user.getId() +  " - id");
+        User user = userRepo.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found!");
         }
@@ -54,8 +53,6 @@ public class UserService implements UserDetailsService {
         }else user.setRoles(Collections.singleton(Role.USER));
         user.setActive(true);
         user.setPhoto(defaultPhoto);
-        System.out.println(user.getRoles());
-        System.out.println("after");
         user.setActivationCode(UUID.randomUUID().toString());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(false);
