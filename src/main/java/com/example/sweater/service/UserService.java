@@ -73,7 +73,7 @@ public class UserService implements UserDetailsService {
                     user.getUsername(),
                     user.getActivationCode()
             );
-            System.out.printf(message + "   "+ user.getUsername());
+            System.out.println(message);
             mailSender.send(user.getEmail(), "Activation code", message);
         }
     }
