@@ -29,7 +29,7 @@ public class UserService implements UserDetailsService {
     @Value("${default.photo.of.user}")
     private String defaultPhoto;
 
-    @Value("url.path")
+    @Value("${url.path}")
     private String urlPath;
 
     @Value("spring.jpa.hibernate.ddl-auto")

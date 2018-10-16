@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bfd94443-e523-4dbe-acc4-77b053fdafdc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +20,12 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/sweater/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="71" column="103" selection-start-line="71" selection-start-column="103" selection-end-line="71" selection-end-column="103" />
+            <state relative-caret-position="-68">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+              <folding>
+                <element signature="e#957#983#1" expanded="true" />
+                <element signature="e#1030#1043#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -449,7 +451,7 @@
       <workItem from="1539443573135" duration="5070000" />
       <workItem from="1539601487633" duration="22593000" />
       <workItem from="1539676234380" duration="18194000" />
-      <workItem from="1539701853587" duration="2431000" />
+      <workItem from="1539701853587" duration="2894000" />
     </task>
     <task id="LOCAL-00001" summary="demo version of project was finished">
       <created>1538381136136</created>
@@ -501,7 +503,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77855000" />
+    <option name="totallyTimeSpent" value="78318000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -836,15 +838,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="170">
           <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/sweater/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="71" column="103" selection-start-line="71" selection-start-column="103" selection-end-line="71" selection-end-column="103" />
+        <state relative-caret-position="-68">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+          <folding>
+            <element signature="e#957#983#1" expanded="true" />
+            <element signature="e#1030#1043#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
