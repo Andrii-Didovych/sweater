@@ -29,6 +29,8 @@ public class UserService implements UserDetailsService {
     @Value("${default.photo.of.user}")
     private String defaultPhoto;
 
+    @Value("url.path")
+    private String urlPath;
 
     @Value("spring.jpa.hibernate.ddl-auto")
     private String dllAuto;
@@ -67,7 +69,7 @@ public class UserService implements UserDetailsService {
         if (!StringUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Hello, %s! \n" +
-                            "Welcome to Sweater. Please, visit next link: http://localhost:8080/activate/%s",
+                            "Welcome to Sweater. Please, visit next link: http://"+urlPath+"/activate/%s",
                     user.getUsername(),
                     user.getActivationCode()
             );
