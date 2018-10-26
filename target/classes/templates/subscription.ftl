@@ -2,7 +2,7 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page true>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css"/>
 <div class="login-registration-style">
     <div class="row justify-content-end pr-3 mb-3">
         <h5><b><div>Here are your ${type}</div></b></h5>
@@ -13,7 +13,7 @@
         <a href="/user-messages/${user.id}">
         <div class="card my-3">
 
-        <img src="<#if user.photo??>/img/${user.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" class="card-img-top">
+        <img src="<#if user.photo??>/img/${user.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" class="card-img-top"/>
             <div class="card-footer text-muted">
                 ${user.getUsername()}
             </div>

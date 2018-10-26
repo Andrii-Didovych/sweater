@@ -103,7 +103,7 @@
             </div>
         </div>
         <#if photo??>
-                    <img src="/img/${photo}" class="card-img-top">
+                    <img src="/img/${photo}" class="card-img-top"/>
         </#if>
     </div>
 </form>

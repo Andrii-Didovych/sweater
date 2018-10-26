@@ -4,7 +4,7 @@
     <div class="col-sm-3 pl-0 pr-2">
         <div class="card">
              <#if photo??>
-                <img src="/img/${photo}" class="card-img-top">
+                <img src="/img/${photo}" class="card-img-top"/>
              </#if>
             <div class="card-footer text-muted">
                 ${authenticatedUser.username}</br>
@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="col-sm-9 p-0" style="text-align: right">
-                <input type="text" name="filter" class="form-control form-control-sm" value="${filter?ifExists}" placeholder="Search by tag">
+                <input type="text" name="filter" class="form-control form-control-sm" value="${filter?ifExists}" placeholder="Search by tag"/>
                 <button type="submit" class="btn btn-primary  btn-sm">Search</button>
             </div>
         </form>
@@ -35,7 +35,6 @@
             <#include "parts/messageEdit.ftl"/>
 
             <#include "parts/messageList.ftl"/>
-
     </div>
     <div class="col-sm-3 pl-2 pr-0">
             <#include "parts/blockForFiveUser.ftl"/>

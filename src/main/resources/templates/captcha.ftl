@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#import "parts/login.ftl" as l>
 <@c.page true>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css"/>
 <form action="/captcha" method="post">
     <#if captchaError??>
     <div class="alert alert-danger" role="alert">

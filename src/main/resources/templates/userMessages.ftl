@@ -6,7 +6,7 @@
     <div class="col-sm-3 pr-2 pl-0 m-0">
         <div class="card">
                      <#if userChannel.photo??>
-                        <img src="/img/${userChannel.photo}" class="card-img-top">
+                        <img src="/img/${userChannel.photo}" class="card-img-top"/>
                      </#if>
             <div class="card-footer text-muted">
                 ${userChannel.username}</br>

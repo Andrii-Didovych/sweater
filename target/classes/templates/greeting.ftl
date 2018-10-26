@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page false>
-<link rel="stylesheet" href="/static/greeting.css">
+<link rel="stylesheet" href="/static/greeting.css"/>
     <div class="row greeting-container">
         <div class="col-6 left">
             <div class="row justify-content-center">

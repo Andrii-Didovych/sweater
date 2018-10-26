@@ -6,7 +6,7 @@
 <#list fiveSubscriptions as subscription>
             <div class="m-1 row m-0 text-muted pr-0">
                     <a href="/user-messages/${subscription.id}">
-                        <img src="<#if subscription.photo??>/img/${subscription.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 40px; height: 40px;">
+                        <img src="<#if subscription.photo??>/img/${subscription.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 40px; height: 40px;"/>
                         ${subscription.username}
                     </a>
             </div>
@@ -26,7 +26,7 @@
 <#list fiveSubscribers as subscription>
             <div class="m-1 row m-0 text-muted pr-0">
                 <a href="/user-messages/${subscription.id}">
-                    <img src="<#if subscription.photo??>/img/${subscription.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 40px; height: 40px;">
+                    <img src="<#if subscription.photo??>/img/${subscription.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 40px; height: 40px;"/>
                     ${subscription.username}
                 </a>
             </div>

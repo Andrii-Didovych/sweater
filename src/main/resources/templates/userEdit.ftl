@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#include "parts/security.ftl">
 <@c.page true>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css"/>
 <div class="login-registration-style">
     <div class="row justify-content-end pr-3 mb-3">
         <h5><b><div>Edit information about user</div></b></h5>

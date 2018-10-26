@@ -1,5 +1,5 @@
 <#macro login path isRegisterForm>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css"/>
 <form action="${path}" method="post">
 
     <div class="login-registration-style">

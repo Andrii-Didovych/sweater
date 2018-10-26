@@ -35,6 +35,14 @@ public class UserService implements UserDetailsService {
     @Value("spring.jpa.hibernate.ddl-auto")
     private String dllAuto;
 
+    public String getDllAuto() {
+        return dllAuto;
+    }
+
+    public void setDllAuto(String dllAuto) {
+        this.dllAuto = dllAuto;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepo.findByUsername(username);
@@ -132,8 +140,6 @@ public class UserService implements UserDetailsService {
 
     public boolean updatePassword(User user, String password, String repeatPassword) {
 
-        System.out.println(password);
-        System.out.println(repeatPassword);
         if (password.equals(repeatPassword)) {
             user.setPassword(passwordEncoder.encode(password));
             userRepo.save(user);

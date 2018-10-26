@@ -14,7 +14,7 @@
     <#else>
         <#assign body = 1..page.getTotalPages()>
     </#if>
-    <div >
+    <div>
         <ul class="pagination mb-2">
             <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Pages</a>

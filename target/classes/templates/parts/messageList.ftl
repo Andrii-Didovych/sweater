@@ -6,7 +6,7 @@
             <div class="m-2 row m-0 text-muted pr-0">
                 <div class="col-sm-3 row p-0">
                     <a href="/user-messages/${message.author.id}">
-                        <img src="<#if message.author.photo??>/img/${message.author.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 30px; height: 30px;">
+                        <img src="<#if message.author.photo??>/img/${message.author.photo}<#else>http://pngc.mypng.cn/1237/personal.png</#if>" alt="..." class="rounded mx-2" style="width: 30px; height: 30px;"/>
                         ${message.authorName}
                     </a>
                 </div>
@@ -21,7 +21,7 @@
                 <i style="font-size: 15px; margin-left: 5px;"><#if message.tag!=''>#${message.tag}</#if></i>
             </div>
             <#if message.filename??>
-                <img src="/img/${message.filename}" class="card-img-top">
+                <img src="/img/${message.filename}" class="card-img-top"/>
             </#if>
         </div>
     <#else>
